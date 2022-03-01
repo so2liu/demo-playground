@@ -1,0 +1,250 @@
+{
+    "sourceFile": "src/components/rxjs/RxJsDemo.component.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 58,
+            "patches": [
+                {
+                    "date": 1646141498612,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1646141506996,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,11 @@\n import React, { useState, useEffect } from \"react\";\n \n const RxJsDemoComponent: React.FC = (props) => {\n-    return <div></div>;\n+    return (\n+        <div>\n+            <h1>RxJsDemoComponent</h1>\n+        </div>\n+    );\n };\n \n export default RxJsDemoComponent;\n"
+                },
+                {
+                    "date": 1646141958185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,12 @@\n import React, { useState, useEffect } from \"react\";\n+import { Button } from \"@douyinfe/semi-ui\";\n \n const RxJsDemoComponent: React.FC = (props) => {\n     return (\n         <div>\n             <h1>RxJsDemoComponent</h1>\n+            <Button>Click</Button>\n         </div>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1646141986166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import React, { useState, useEffect } from \"react\";\n import { Button } from \"@douyinfe/semi-ui\";\n \n const RxJsDemoComponent: React.FC = (props) => {\n+    const [count, setCount] = useState(0);\n     return (\n         <div>\n             <h1>RxJsDemoComponent</h1>\n             <Button>Click</Button>\n"
+                },
+                {
+                    "date": 1646142023285,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,16 @@\n import React, { useState, useEffect } from \"react\";\n-import { Button } from \"@douyinfe/semi-ui\";\n+import { Button, Typography, Space } from \"@douyinfe/semi-ui\";\n \n const RxJsDemoComponent: React.FC = (props) => {\n     const [count, setCount] = useState(0);\n     return (\n         <div>\n             <h1>RxJsDemoComponent</h1>\n-            <Button>Click</Button>\n+            <Space>\n+                <Typography>{count}</Typography>\n+                <Button>Click</Button>\n+            </Space>\n         </div>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1646142032405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     const [count, setCount] = useState(0);\n     return (\n         <div>\n             <h1>RxJsDemoComponent</h1>\n-            <Space>\n+            <Space vertical spacing={4}>\n                 <Typography>{count}</Typography>\n                 <Button>Click</Button>\n             </Space>\n         </div>\n"
+                },
+                {
+                    "date": 1646142206773,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,17 @@\n-import React, { useState, useEffect } from \"react\";\n+import React, { useState, useEffect, useRef } from \"react\";\n import { Button, Typography, Space } from \"@douyinfe/semi-ui\";\n+import { fromEvent } from \"rxjs\";\n \n const RxJsDemoComponent: React.FC = (props) => {\n     const [count, setCount] = useState(0);\n+    const btnRef = useRef<HTMLButtonElement>(null);\n     return (\n         <div>\n             <h1>RxJsDemoComponent</h1>\n             <Space vertical spacing={4}>\n                 <Typography>{count}</Typography>\n-                <Button>Click</Button>\n+                <Button ref={btnRef}>Click</Button>\n             </Space>\n         </div>\n     );\n };\n"
+                },
+                {
+                    "date": 1646142302420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +1,16 @@\n import React, { useState, useEffect, useRef } from \"react\";\n-import { Button, Typography, Space } from \"@douyinfe/semi-ui\";\n+import { Button } from \"@chakra-ui/react\";\n import { fromEvent } from \"rxjs\";\n \n const RxJsDemoComponent: React.FC = (props) => {\n     const [count, setCount] = useState(0);\n     const btnRef = useRef<HTMLButtonElement>(null);\n     return (\n         <div>\n             <h1>RxJsDemoComponent</h1>\n-            <Space vertical spacing={4}>\n-                <Typography>{count}</Typography>\n-                <Button ref={btnRef}>Click</Button>\n-            </Space>\n+            <p>{count}</p>\n+            <Button ref={btnRef}>Click</Button>\n         </div>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1646142492871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,13 +5,13 @@\n const RxJsDemoComponent: React.FC = (props) => {\n     const [count, setCount] = useState(0);\n     const btnRef = useRef<HTMLButtonElement>(null);\n     return (\n-        <div>\n+        <Container>\n             <h1>RxJsDemoComponent</h1>\n             <p>{count}</p>\n             <Button ref={btnRef}>Click</Button>\n-        </div>\n+        </Container>\n     );\n };\n \n export default RxJsDemoComponent;\n"
+                },
+                {
+                    "date": 1646142504645,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React, { useState, useEffect, useRef } from \"react\";\n-import { Button } from \"@chakra-ui/react\";\n+import { Button, Container } from \"@chakra-ui/react\";\n import { fromEvent } from \"rxjs\";\n \n const RxJsDemoComponent: React.FC = (props) => {\n     const [count, setCount] = useState(0);\n"
+                },
+                {
+                    "date": 1646142525123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const RxJsDemoComponent: React.FC = (props) => {\n     const [count, setCount] = useState(0);\n     const btnRef = useRef<HTMLButtonElement>(null);\n     return (\n-        <Container>\n+        <Container height=\"100%\">\n             <h1>RxJsDemoComponent</h1>\n             <p>{count}</p>\n             <Button ref={btnRef}>Click</Button>\n         </Container>\n"
+                },
+                {
+                    "date": 1646142547603,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n const RxJsDemoComponent: React.FC = (props) => {\n     const [count, setCount] = useState(0);\n     const btnRef = useRef<HTMLButtonElement>(null);\n     return (\n-        <Container height=\"100%\">\n+        <Container padding={20}>\n             <h1>RxJsDemoComponent</h1>\n             <p>{count}</p>\n             <Button ref={btnRef}>Click</Button>\n         </Container>\n"
+                },
+                {
+                    "date": 1646142603400,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,14 @@\n import React, { useState, useEffect, useRef } from \"react\";\n-import { Button, Container } from \"@chakra-ui/react\";\n+import { Button, Container, Heading } from \"@chakra-ui/react\";\n import { fromEvent } from \"rxjs\";\n \n const RxJsDemoComponent: React.FC = (props) => {\n     const [count, setCount] = useState(0);\n     const btnRef = useRef<HTMLButtonElement>(null);\n     return (\n         <Container padding={20}>\n-            <h1>RxJsDemoComponent</h1>\n+            <Heading>RxJsDemoComponent</Heading>\n             <p>{count}</p>\n             <Button ref={btnRef}>Click</Button>\n         </Container>\n     );\n"
+                },
+                {
+                    "date": 1646142616401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,15 @@\n import React, { useState, useEffect, useRef } from \"react\";\n-import { Button, Container, Heading } from \"@chakra-ui/react\";\n+import { Button, Container, Heading, Text } from \"@chakra-ui/react\";\n import { fromEvent } from \"rxjs\";\n \n const RxJsDemoComponent: React.FC = (props) => {\n     const [count, setCount] = useState(0);\n     const btnRef = useRef<HTMLButtonElement>(null);\n     return (\n         <Container padding={20}>\n             <Heading>RxJsDemoComponent</Heading>\n-            <p>{count}</p>\n+            <Text>{count}</Text>\n             <Button ref={btnRef}>Click</Button>\n         </Container>\n     );\n };\n"
+                },
+                {
+                    "date": 1646142641076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,12 @@\n     const btnRef = useRef<HTMLButtonElement>(null);\n     return (\n         <Container padding={20}>\n             <Heading>RxJsDemoComponent</Heading>\n-            <Text>{count}</Text>\n+            <Center>\n+                <Text>{count}</Text>\n+            </Center>\n+\n             <Button ref={btnRef}>Click</Button>\n         </Container>\n     );\n };\n"
+                },
+                {
+                    "date": 1646142648725,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React, { useState, useEffect, useRef } from \"react\";\n-import { Button, Container, Heading, Text } from \"@chakra-ui/react\";\n+import { Button, Container, Heading, Text, Center } from \"@chakra-ui/react\";\n import { fromEvent } from \"rxjs\";\n \n const RxJsDemoComponent: React.FC = (props) => {\n     const [count, setCount] = useState(0);\n"
+                },
+                {
+                    "date": 1646142701000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,27 @@\n import React, { useState, useEffect, useRef } from \"react\";\n-import { Button, Container, Heading, Text, Center } from \"@chakra-ui/react\";\n+import {\n+    Button,\n+    Container,\n+    Heading,\n+    Text,\n+    Center,\n+    Stack,\n+} from \"@chakra-ui/react\";\n import { fromEvent } from \"rxjs\";\n \n const RxJsDemoComponent: React.FC = (props) => {\n     const [count, setCount] = useState(0);\n     const btnRef = useRef<HTMLButtonElement>(null);\n     return (\n-        <Container padding={20}>\n+        <Stack>\n             <Heading>RxJsDemoComponent</Heading>\n             <Center>\n                 <Text>{count}</Text>\n             </Center>\n \n             <Button ref={btnRef}>Click</Button>\n-        </Container>\n+        </Stack>\n     );\n };\n \n export default RxJsDemoComponent;\n"
+                },
+                {
+                    "date": 1646142726484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,16 +12,16 @@\n const RxJsDemoComponent: React.FC = (props) => {\n     const [count, setCount] = useState(0);\n     const btnRef = useRef<HTMLButtonElement>(null);\n     return (\n-        <Stack>\n+        <Flex>\n             <Heading>RxJsDemoComponent</Heading>\n             <Center>\n                 <Text>{count}</Text>\n             </Center>\n \n             <Button ref={btnRef}>Click</Button>\n-        </Stack>\n+        </Flex>\n     );\n };\n \n export default RxJsDemoComponent;\n"
+                },
+                {
+                    "date": 1646142747730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,16 +5,17 @@\n     Heading,\n     Text,\n     Center,\n     Stack,\n+    Flex,\n } from \"@chakra-ui/react\";\n import { fromEvent } from \"rxjs\";\n \n const RxJsDemoComponent: React.FC = (props) => {\n     const [count, setCount] = useState(0);\n     const btnRef = useRef<HTMLButtonElement>(null);\n     return (\n-        <Flex>\n+        <Flex flexDirection=\"column\">\n             <Heading>RxJsDemoComponent</Heading>\n             <Center>\n                 <Text>{count}</Text>\n             </Center>\n"
+                },
+                {
+                    "date": 1646142762534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,24 +5,23 @@\n     Heading,\n     Text,\n     Center,\n     Stack,\n-    Flex,\n } from \"@chakra-ui/react\";\n import { fromEvent } from \"rxjs\";\n \n const RxJsDemoComponent: React.FC = (props) => {\n     const [count, setCount] = useState(0);\n     const btnRef = useRef<HTMLButtonElement>(null);\n     return (\n-        <Flex flexDirection=\"column\">\n+        <Stack>\n             <Heading>RxJsDemoComponent</Heading>\n             <Center>\n                 <Text>{count}</Text>\n             </Center>\n \n             <Button ref={btnRef}>Click</Button>\n-        </Flex>\n+        </Stack>\n     );\n };\n \n export default RxJsDemoComponent;\n"
+                },
+                {
+                    "date": 1646142831567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,15 +11,20 @@\n \n const RxJsDemoComponent: React.FC = (props) => {\n     const [count, setCount] = useState(0);\n     const btnRef = useRef<HTMLButtonElement>(null);\n+\n+    useEffect(() => {\n+        const btn = btnRef.current;\n+        fromEvent(btn, \"click\").subscribe(() => console.log(\"click\"));\n+    });\n+\n     return (\n         <Stack>\n             <Heading>RxJsDemoComponent</Heading>\n             <Center>\n                 <Text>{count}</Text>\n             </Center>\n-\n             <Button ref={btnRef}>Click</Button>\n         </Stack>\n     );\n };\n"
+                },
+                {
+                    "date": 1646142857116,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,12 @@\n     const btnRef = useRef<HTMLButtonElement>(null);\n \n     useEffect(() => {\n         const btn = btnRef.current;\n-        fromEvent(btn, \"click\").subscribe(() => console.log(\"click\"));\n-    });\n+        if (btn) {\n+            fromEvent(btn, \"click\").subscribe(() => console.log(\"click\"));\n+        }\n+    }, []);\n \n     return (\n         <Stack>\n             <Heading>RxJsDemoComponent</Heading>\n"
+                },
+                {
+                    "date": 1646142956227,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,16 @@\n             fromEvent(btn, \"click\").subscribe(() => console.log(\"click\"));\n         }\n     }, []);\n \n+    useEffect(() => {\n+        if(btnRef.current) {\n+            fromEvent(btnRef.current, \"click\").subscribe(() => {\n+                setCount(count + 1);\n+            }\n+        }\n+        }, [count]);\n+\n     return (\n         <Stack>\n             <Heading>RxJsDemoComponent</Heading>\n             <Center>\n"
+                },
+                {
+                    "date": 1646142971474,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,14 +20,14 @@\n         }\n     }, []);\n \n     useEffect(() => {\n-        if(btnRef.current) {\n+        if (btnRef.current) {\n             fromEvent(btnRef.current, \"click\").subscribe(() => {\n                 setCount(count + 1);\n-            }\n+            });\n         }\n-        }, [count]);\n+    }, [count]);\n \n     return (\n         <Stack>\n             <Heading>RxJsDemoComponent</Heading>\n"
+                },
+                {
+                    "date": 1646143140945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,16 @@\n             });\n         }\n     }, [count]);\n \n+    useEffect(() => {\n+        if (btnRef.current) {\n+            fromEvent(btnRef.current, \"click\")\n+                .pipe((count) => count + 1, 0)\n+                .subscribe((count) => console.log(count));\n+        }\n+    }, []);\n+\n     return (\n         <Stack>\n             <Heading>RxJsDemoComponent</Heading>\n             <Center>\n"
+                },
+                {
+                    "date": 1646143189359,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     Text,\n     Center,\n     Stack,\n } from \"@chakra-ui/react\";\n-import { fromEvent } from \"rxjs\";\n+import { fromEvent, scan } from \"rxjs\";\n \n const RxJsDemoComponent: React.FC = (props) => {\n     const [count, setCount] = useState(0);\n     const btnRef = useRef<HTMLButtonElement>(null);\n@@ -30,9 +30,9 @@\n \n     useEffect(() => {\n         if (btnRef.current) {\n             fromEvent(btnRef.current, \"click\")\n-                .pipe((count) => count + 1, 0)\n+                .pipe(scan((count) => count + 1, 0))\n                 .subscribe((count) => console.log(count));\n         }\n     }, []);\n \n"
+                },
+                {
+                    "date": 1646143355634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     Text,\n     Center,\n     Stack,\n } from \"@chakra-ui/react\";\n-import { fromEvent, scan } from \"rxjs\";\n+import { fromEvent, scan, throttleTime } from \"rxjs\";\n \n const RxJsDemoComponent: React.FC = (props) => {\n     const [count, setCount] = useState(0);\n     const btnRef = useRef<HTMLButtonElement>(null);\n@@ -35,8 +35,19 @@\n                 .subscribe((count) => console.log(count));\n         }\n     }, []);\n \n+    useEffect(() => {\n+        if (btnRef.current) {\n+            fromEvent(btnRef.current, \"click\")\n+                .pipe(\n+                    throttleTime(1000),\n+                    scan((count) => count + 1, 0)\n+                )\n+                .subscribe((count) => console.log(count));\n+        }\n+    }, []);\n+\n     return (\n         <Stack>\n             <Heading>RxJsDemoComponent</Heading>\n             <Center>\n"
+                },
+                {
+                    "date": 1646143399824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,6 @@\n import React, { useState, useEffect, useRef } from \"react\";\n-import {\n-    Button,\n-    Container,\n-    Heading,\n-    Text,\n-    Center,\n-    Stack,\n-} from \"@chakra-ui/react\";\n+import { Button, Heading, Text, Center, Stack } from \"@chakra-ui/react\";\n import { fromEvent, scan, throttleTime } from \"rxjs\";\n \n const RxJsDemoComponent: React.FC = (props) => {\n     const [count, setCount] = useState(0);\n"
+                },
+                {
+                    "date": 1646143406650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import React, { useState, useEffect, useRef } from \"react\";\n import { Button, Heading, Text, Center, Stack } from \"@chakra-ui/react\";\n import { fromEvent, scan, throttleTime } from \"rxjs\";\n+import produce from \"immer\";\n \n const RxJsDemoComponent: React.FC = (props) => {\n     const [count, setCount] = useState(0);\n     const btnRef = useRef<HTMLButtonElement>(null);\n"
+                },
+                {
+                    "date": 1646144061301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,12 +43,15 @@\n \n     return (\n         <Stack>\n             <Heading>RxJsDemoComponent</Heading>\n-            <Center>\n-                <Text>{count}</Text>\n-            </Center>\n-            <Button ref={btnRef}>Click</Button>\n+\n+            <Box>\n+                <Center>\n+                    <Text>{count}</Text>\n+                </Center>\n+                <Button ref={btnRef}>Click</Button>\n+            </Box>\n         </Stack>\n     );\n };\n \n"
+                },
+                {
+                    "date": 1646144070239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React, { useState, useEffect, useRef } from \"react\";\n-import { Button, Heading, Text, Center, Stack } from \"@chakra-ui/react\";\n+import { Button, Heading, Text, Center, Stack, Box } from \"@chakra-ui/react\";\n import { fromEvent, scan, throttleTime } from \"rxjs\";\n import produce from \"immer\";\n \n const RxJsDemoComponent: React.FC = (props) => {\n"
+                },
+                {
+                    "date": 1646144102319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     return (\n         <Stack>\n             <Heading>RxJsDemoComponent</Heading>\n \n-            <Box>\n+            <Box borderWidth={1} borderRadius=\"lg\">\n                 <Center>\n                     <Text>{count}</Text>\n                 </Center>\n                 <Button ref={btnRef}>Click</Button>\n"
+                },
+                {
+                    "date": 1646144115582,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     return (\n         <Stack>\n             <Heading>RxJsDemoComponent</Heading>\n \n-            <Box borderWidth={1} borderRadius=\"lg\">\n+            <Box borderWidth={1} borderRadius=\"lg\" padding={8}>\n                 <Center>\n                     <Text>{count}</Text>\n                 </Center>\n                 <Button ref={btnRef}>Click</Button>\n"
+                },
+                {
+                    "date": 1646144132147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,12 +44,10 @@\n     return (\n         <Stack>\n             <Heading>RxJsDemoComponent</Heading>\n \n-            <Box borderWidth={1} borderRadius=\"lg\" padding={8}>\n-                <Center>\n-                    <Text>{count}</Text>\n-                </Center>\n+            <Box maxW=\"sm\" borderWidth={1} borderRadius=\"lg\" padding={8}>\n+                <Text>{count}</Text>\n                 <Button ref={btnRef}>Click</Button>\n             </Box>\n         </Stack>\n     );\n"
+                },
+                {
+                    "date": 1646144842420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,18 +29,22 @@\n                 .subscribe((count) => console.log(count));\n         }\n     }, []);\n \n+    \n     useEffect(() => {\n         if (btnRef.current) {\n             fromEvent(btnRef.current, \"click\")\n-                .pipe(\n-                    throttleTime(1000),\n-                    scan((count) => count + 1, 0)\n+            .pipe(\n+                throttleTime(1000),\n+                scan((count) => count + 1, 0)\n                 )\n                 .subscribe((count) => console.log(count));\n-        }\n-    }, []);\n+            }\n+        }, []);\n+    \n+        useEffect(() => {\n+            const source$ = interval\n \n     return (\n         <Stack>\n             <Heading>RxJsDemoComponent</Heading>\n"
+                },
+                {
+                    "date": 1646145016821,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n import React, { useState, useEffect, useRef } from \"react\";\n import { Button, Heading, Text, Center, Stack, Box } from \"@chakra-ui/react\";\n-import { fromEvent, scan, throttleTime } from \"rxjs\";\n+import { fromEvent, interval, map, scan, take, throttleTime } from \"rxjs\";\n import produce from \"immer\";\n \n const RxJsDemoComponent: React.FC = (props) => {\n     const [count, setCount] = useState(0);\n@@ -42,9 +42,19 @@\n             }\n         }, []);\n     \n         useEffect(() => {\n-            const source$ = interval\n+            const source$ = interval(1000).pipe(take(2))\n+            const example$ = source$.pipe(\n+                map(\n+                    val => interval(1000)\n+                    .pipe(\n+                        i => `Result (${val}) : ${i}`\n+                    )\n+                )\n+            )\n+                    }\n+        }, []);\n \n     return (\n         <Stack>\n             <Heading>RxJsDemoComponent</Heading>\n"
+                },
+                {
+                    "date": 1646145031704,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,33 +29,26 @@\n                 .subscribe((count) => console.log(count));\n         }\n     }, []);\n \n-    \n     useEffect(() => {\n         if (btnRef.current) {\n             fromEvent(btnRef.current, \"click\")\n-            .pipe(\n-                throttleTime(1000),\n-                scan((count) => count + 1, 0)\n+                .pipe(\n+                    throttleTime(1000),\n+                    scan((count) => count + 1, 0)\n                 )\n                 .subscribe((count) => console.log(count));\n-            }\n-        }, []);\n-    \n-        useEffect(() => {\n-            const source$ = interval(1000).pipe(take(2))\n-            const example$ = source$.pipe(\n-                map(\n-                    val => interval(1000)\n-                    .pipe(\n-                        i => `Result (${val}) : ${i}`\n-                    )\n-                )\n-            )\n-                    }\n-        }, []);\n+        }\n+    }, []);\n \n+    useEffect(() => {\n+        const source$ = interval(1000).pipe(take(2));\n+        const example$ = source$.pipe(\n+            map((val) => interval(1000).pipe((i) => `Result (${val}) : ${i}`))\n+        );\n+    }, []);\n+\n     return (\n         <Stack>\n             <Heading>RxJsDemoComponent</Heading>\n \n"
+                },
+                {
+                    "date": 1646145050877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,11 @@\n \n     useEffect(() => {\n         const source$ = interval(1000).pipe(take(2));\n         const example$ = source$.pipe(\n-            map((val) => interval(1000).pipe((i) => `Result (${val}) : ${i}`))\n+            map((val) =>\n+                interval(1000).pipe(map((i) => `Result (${val}) : ${i}`))\n+            )\n         );\n     }, []);\n \n     return (\n"
+                },
+                {
+                    "date": 1646145089627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,15 @@\n import React, { useState, useEffect, useRef } from \"react\";\n import { Button, Heading, Text, Center, Stack, Box } from \"@chakra-ui/react\";\n-import { fromEvent, interval, map, scan, take, throttleTime } from \"rxjs\";\n+import {\n+    combineAll,\n+    fromEvent,\n+    interval,\n+    map,\n+    scan,\n+    take,\n+    throttleTime,\n+} from \"rxjs\";\n import produce from \"immer\";\n \n const RxJsDemoComponent: React.FC = (props) => {\n     const [count, setCount] = useState(0);\n@@ -47,8 +55,9 @@\n             map((val) =>\n                 interval(1000).pipe(map((i) => `Result (${val}) : ${i}`))\n             )\n         );\n+        example$.pipe(combineAll()).subscribe((val) => console.log(val));\n     }, []);\n \n     return (\n         <Stack>\n"
+                },
+                {
+                    "date": 1646145111488,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import React, { useState, useEffect, useRef } from \"react\";\n import { Button, Heading, Text, Center, Stack, Box } from \"@chakra-ui/react\";\n import {\n     combineAll,\n+    combineLatestAll,\n     fromEvent,\n     interval,\n     map,\n     scan,\n@@ -55,9 +56,9 @@\n             map((val) =>\n                 interval(1000).pipe(map((i) => `Result (${val}) : ${i}`))\n             )\n         );\n-        example$.pipe(combineAll()).subscribe((val) => console.log(val));\n+        example$.pipe(combineLatestAll()).subscribe((val) => console.log(val));\n     }, []);\n \n     return (\n         <Stack>\n"
+                },
+                {
+                    "date": 1646145217559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,8 +51,9 @@\n     }, []);\n \n     useEffect(() => {\n         const source$ = interval(1000).pipe(take(2));\n+        source$.subscribe((x) => console.log(x));\n         const example$ = source$.pipe(\n             map((val) =>\n                 interval(1000).pipe(map((i) => `Result (${val}) : ${i}`))\n             )\n"
+                },
+                {
+                    "date": 1646145245401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,10 @@\n         source$.subscribe((x) => console.log(x));\n         const example$ = source$.pipe(\n             map((val) =>\n                 interval(1000).pipe(map((i) => `Result (${val}) : ${i}`))\n-            )\n+            ),\n+            take(3)\n         );\n         example$.pipe(combineLatestAll()).subscribe((val) => console.log(val));\n     }, []);\n \n"
+                },
+                {
+                    "date": 1646145362404,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,12 +53,13 @@\n     useEffect(() => {\n         const source$ = interval(1000).pipe(take(2));\n         source$.subscribe((x) => console.log(x));\n         const example$ = source$.pipe(\n-            map((val) =>\n-                interval(1000).pipe(map((i) => `Result (${val}) : ${i}`))\n-            ),\n-            take(3)\n+            map(\n+                (val) =>\n+                    interval(1000).pipe(map((i) => `Result (${val}) : ${i}`)),\n+                take(3)\n+            )\n         );\n         example$.pipe(combineLatestAll()).subscribe((val) => console.log(val));\n     }, []);\n \n"
+                },
+                {
+                    "date": 1646145399851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,12 +53,13 @@\n     useEffect(() => {\n         const source$ = interval(1000).pipe(take(2));\n         source$.subscribe((x) => console.log(x));\n         const example$ = source$.pipe(\n-            map(\n-                (val) =>\n-                    interval(1000).pipe(map((i) => `Result (${val}) : ${i}`)),\n-                take(3)\n+            map((val) =>\n+                interval(1000).pipe(\n+                    map((i) => `Result (${val}) : ${i}`),\n+                    take(3)\n+                )\n             )\n         );\n         example$.pipe(combineLatestAll()).subscribe((val) => console.log(val));\n     }, []);\n"
+                },
+                {
+                    "date": 1646145616569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,8 +50,9 @@\n         }\n     }, []);\n \n     useEffect(() => {\n+        // combineLatest\n         const source$ = interval(1000).pipe(take(2));\n         source$.subscribe((x) => console.log(x));\n         const example$ = source$.pipe(\n             map((val) =>\n"
+                },
+                {
+                    "date": 1646145694469,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n     combineLatestAll,\n     fromEvent,\n     interval,\n     map,\n+    of,\n     scan,\n     take,\n     throttleTime,\n } from \"rxjs\";\n@@ -64,8 +65,15 @@\n         );\n         example$.pipe(combineLatestAll()).subscribe((val) => console.log(val));\n     }, []);\n \n+    useEffect(() => {\n+        // take\n+        const source$ = of(1, 2, 3, 4, 5);\n+        const example$ = source$.pipe(take(2));\n+        example$.subscribe((val) => console.log(val));\n+    }, []);\n+\n     return (\n         <Stack>\n             <Heading>RxJsDemoComponent</Heading>\n \n"
+                },
+                {
+                    "date": 1646145743141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,15 +65,14 @@\n         );\n         example$.pipe(combineLatestAll()).subscribe((val) => console.log(val));\n     }, []);\n \n-    useEffect(() => {\n+    const onTakeDemo = () => {\n         // take\n         const source$ = of(1, 2, 3, 4, 5);\n         const example$ = source$.pipe(take(2));\n         example$.subscribe((val) => console.log(val));\n-    }, []);\n-\n+    };\n     return (\n         <Stack>\n             <Heading>RxJsDemoComponent</Heading>\n \n"
+                },
+                {
+                    "date": 1646145752851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -78,8 +78,9 @@\n \n             <Box maxW=\"sm\" borderWidth={1} borderRadius=\"lg\" padding={8}>\n                 <Text>{count}</Text>\n                 <Button ref={btnRef}>Click</Button>\n+                <Button onClick={onTakeDemo}>Take</Button>\n             </Box>\n         </Stack>\n     );\n };\n"
+                },
+                {
+                    "date": 1646145764817,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,10 +77,12 @@\n             <Heading>RxJsDemoComponent</Heading>\n \n             <Box maxW=\"sm\" borderWidth={1} borderRadius=\"lg\" padding={8}>\n                 <Text>{count}</Text>\n-                <Button ref={btnRef}>Click</Button>\n-                <Button onClick={onTakeDemo}>Take</Button>\n+                <Stack>\n+                    <Button ref={btnRef}>Click</Button>\n+                    <Button onClick={onTakeDemo}>Take</Button>\n+                </Stack>\n             </Box>\n         </Stack>\n     );\n };\n"
+                },
+                {
+                    "date": 1646146020660,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n     map,\n     of,\n     scan,\n     take,\n+    tap,\n     throttleTime,\n } from \"rxjs\";\n import produce from \"immer\";\n \n@@ -65,14 +66,18 @@\n         );\n         example$.pipe(combineLatestAll()).subscribe((val) => console.log(val));\n     }, []);\n \n-    const onTakeDemo = () => {\n+    const [takeDemo, setTakeDemo] = useState(0);\n+    useEffect(() => {\n         // take\n-        const source$ = of(1, 2, 3, 4, 5);\n-        const example$ = source$.pipe(take(2));\n-        example$.subscribe((val) => console.log(val));\n-    };\n+        if (btnRef.current) {\n+            fromEvent(btnRef.current, \"click\").pipe(\n+                take(1),\n+                tap((v) => setTakeDemo(v.clientX))\n+            );\n+        }\n+    }, []);\n     return (\n         <Stack>\n             <Heading>RxJsDemoComponent</Heading>\n \n"
+                },
+                {
+                    "date": 1646146062925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -72,9 +72,9 @@\n         // take\n         if (btnRef.current) {\n             fromEvent(btnRef.current, \"click\").pipe(\n                 take(1),\n-                tap((v) => setTakeDemo(v.clientX))\n+                tap(() => setTakeDemo(takeDemo + 1))\n             );\n         }\n     }, []);\n     return (\n"
+                },
+                {
+                    "date": 1646146074652,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,9 +84,8 @@\n             <Box maxW=\"sm\" borderWidth={1} borderRadius=\"lg\" padding={8}>\n                 <Text>{count}</Text>\n                 <Stack>\n                     <Button ref={btnRef}>Click</Button>\n-                    <Button onClick={onTakeDemo}>Take</Button>\n                 </Stack>\n             </Box>\n         </Stack>\n     );\n"
+                },
+                {
+                    "date": 1646146089130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -82,8 +82,9 @@\n             <Heading>RxJsDemoComponent</Heading>\n \n             <Box maxW=\"sm\" borderWidth={1} borderRadius=\"lg\" padding={8}>\n                 <Text>{count}</Text>\n+                <Text>Take Demo: {takeDemo}</Text>\n                 <Stack>\n                     <Button ref={btnRef}>Click</Button>\n                 </Stack>\n             </Box>\n"
+                },
+                {
+                    "date": 1646146109909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,11 +70,10 @@\n     const [takeDemo, setTakeDemo] = useState(0);\n     useEffect(() => {\n         // take\n         if (btnRef.current) {\n-            fromEvent(btnRef.current, \"click\").pipe(\n-                take(1),\n-                tap(() => setTakeDemo(takeDemo + 1))\n+            fromEvent(btnRef.current, \"click\").pipe(take(1), () =>\n+                setTakeDemo(takeDemo + 1)\n             );\n         }\n     }, []);\n     return (\n"
+                },
+                {
+                    "date": 1646146116101,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,10 +70,11 @@\n     const [takeDemo, setTakeDemo] = useState(0);\n     useEffect(() => {\n         // take\n         if (btnRef.current) {\n-            fromEvent(btnRef.current, \"click\").pipe(take(1), () =>\n-                setTakeDemo(takeDemo + 1)\n+            fromEvent(btnRef.current, \"click\").pipe(\n+                take(1),\n+                tap(() => setTakeDemo(takeDemo + 1))\n             );\n         }\n     }, []);\n     return (\n"
+                },
+                {
+                    "date": 1646146142474,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -70,12 +70,14 @@\n     const [takeDemo, setTakeDemo] = useState(0);\n     useEffect(() => {\n         // take\n         if (btnRef.current) {\n-            fromEvent(btnRef.current, \"click\").pipe(\n-                take(1),\n-                tap(() => setTakeDemo(takeDemo + 1))\n-            );\n+            fromEvent(btnRef.current, \"click\")\n+                .pipe(\n+                    take(1),\n+                    tap(() => setTakeDemo(takeDemo + 1))\n+                )\n+                .subscribe();\n         }\n     }, []);\n     return (\n         <Stack>\n"
+                },
+                {
+                    "date": 1646146164953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -84,9 +84,9 @@\n             <Heading>RxJsDemoComponent</Heading>\n \n             <Box maxW=\"sm\" borderWidth={1} borderRadius=\"lg\" padding={8}>\n                 <Text>{count}</Text>\n-                <Text>Take Demo: {takeDemo}</Text>\n+                <Text>Only take once: {takeDemo}</Text>\n                 <Stack>\n                     <Button ref={btnRef}>Click</Button>\n                 </Stack>\n             </Box>\n"
+                },
+                {
+                    "date": 1646146205170,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -83,9 +83,9 @@\n         <Stack>\n             <Heading>RxJsDemoComponent</Heading>\n \n             <Box maxW=\"sm\" borderWidth={1} borderRadius=\"lg\" padding={8}>\n-                <Text>{count}</Text>\n+                <Text>Count: {count}</Text>\n                 <Text>Only take once: {takeDemo}</Text>\n                 <Stack>\n                     <Button ref={btnRef}>Click</Button>\n                 </Stack>\n"
+                },
+                {
+                    "date": 1646146297962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,9 +73,12 @@\n         if (btnRef.current) {\n             fromEvent(btnRef.current, \"click\")\n                 .pipe(\n                     take(1),\n-                    tap(() => setTakeDemo(takeDemo + 1))\n+                    tap(\n+                        // transparently perform actions\n+                        () => setTakeDemo(takeDemo + 1)\n+                    )\n                 )\n                 .subscribe();\n         }\n     }, []);\n@@ -83,9 +86,9 @@\n         <Stack>\n             <Heading>RxJsDemoComponent</Heading>\n \n             <Box maxW=\"sm\" borderWidth={1} borderRadius=\"lg\" padding={8}>\n-                <Text>Count: {count}</Text>\n+                <Text>Click count: {count}</Text>\n                 <Text>Only take once: {takeDemo}</Text>\n                 <Stack>\n                     <Button ref={btnRef}>Click</Button>\n                 </Stack>\n"
+                }
+            ],
+            "date": 1646141498612,
+            "name": "Commit-0",
+            "content": "import React, { useState, useEffect } from \"react\";\n\nconst RxJsDemoComponent: React.FC = (props) => {\n    return <div></div>;\n};\n\nexport default RxJsDemoComponent;\n"
+        }
+    ]
+}

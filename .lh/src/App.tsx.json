@@ -1,0 +1,46 @@
+{
+    "sourceFile": "src/App.tsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1646141498611,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1646141517536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,8 @@\n     RxJs = \"rsjs\",\n }\n \n function App() {\n-    const [count, setCount] = useState(0);\n-\n     return (\n         <BrowserRouter>\n             <Routes>\n                 <Route path={RoutePath.RxJs} element={<RxJsDemoComponent />} />'\n"
+                },
+                {
+                    "date": 1646141534402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { BrowserRouter, Routes, Route } from \"react-router-dom\";\n import RxJsDemoComponent from \"./components/rxjs/RxJsDemo.component\";\n \n enum RoutePath {\n-    RxJs = \"rsjs\",\n+    RxJs = \"rxjs\",\n }\n \n function App() {\n     return (\n"
+                },
+                {
+                    "date": 1646141841666,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,19 +1,16 @@\n import { useState } from \"react\";\n import { BrowserRouter, Routes, Route } from \"react-router-dom\";\n import RxJsDemoComponent from \"./components/rxjs/RxJsDemo.component\";\n+import { Tabs, TabPane } from '@douyinfe/semi-ui';\n \n-enum RoutePath {\n-    RxJs = \"rxjs\",\n+\n+enum TabKey {\n+    RxJsDemo = 'RxJsDemo',\n }\n-\n function App() {\n     return (\n-        <BrowserRouter>\n-            <Routes>\n-                <Route path={RoutePath.RxJs} element={<RxJsDemoComponent />} />'\n-            </Routes>\n-        </BrowserRouter>\n-    );\n-}\n-\n+      <Tabs type=\"button\">\n+        <TabPane tab=\"RxJsDemo\" itemKey={TabKey.RxJsDemo} >\n+      </Tabs>  \n+    )\n export default App;\n"
+                },
+                {
+                    "date": 1646141848373,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,10 @@\n }\n function App() {\n     return (\n       <Tabs type=\"button\">\n-        <TabPane tab=\"RxJsDemo\" itemKey={TabKey.RxJsDemo} >\n+        <TabPane tab=\"RxJsDemo\" itemKey={TabKey.RxJsDemo}>\n+            \n+            </TabPane> \n       </Tabs>  \n     )\n export default App;\n"
+                },
+                {
+                    "date": 1646141868269,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +1,18 @@\n import { useState } from \"react\";\n import { BrowserRouter, Routes, Route } from \"react-router-dom\";\n import RxJsDemoComponent from \"./components/rxjs/RxJsDemo.component\";\n-import { Tabs, TabPane } from '@douyinfe/semi-ui';\n+import { Tabs, TabPane } from \"@douyinfe/semi-ui\";\n \n-\n enum TabKey {\n-    RxJsDemo = 'RxJsDemo',\n+    RxJsDemo = \"RxJsDemo\",\n }\n function App() {\n     return (\n-      <Tabs type=\"button\">\n-        <TabPane tab=\"RxJsDemo\" itemKey={TabKey.RxJsDemo}>\n-            \n-            </TabPane> \n-      </Tabs>  \n-    )\n+        <Tabs type=\"button\">\n+            <TabPane tab=\"RxJsDemo\" itemKey={TabKey.RxJsDemo}>\n+                <RxJsDemoComponent />\n+            </TabPane>\n+        </Tabs>\n+    );\n+}\n export default App;\n"
+                },
+                {
+                    "date": 1646142376459,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,12 +7,14 @@\n     RxJsDemo = \"RxJsDemo\",\n }\n function App() {\n     return (\n-        <Tabs type=\"button\">\n-            <TabPane tab=\"RxJsDemo\" itemKey={TabKey.RxJsDemo}>\n-                <RxJsDemoComponent />\n-            </TabPane>\n-        </Tabs>\n+        <ChakraProvider>\n+            <Tabs type=\"button\">\n+                <TabPane tab=\"RxJsDemo\" itemKey={TabKey.RxJsDemo}>\n+                    <RxJsDemoComponent />\n+                </TabPane>\n+            </Tabs>\n+        </ChakraProvider>\n     );\n }\n export default App;\n"
+                },
+                {
+                    "date": 1646142413901,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import { useState } from \"react\";\n-import { BrowserRouter, Routes, Route } from \"react-router-dom\";\n import RxJsDemoComponent from \"./components/rxjs/RxJsDemo.component\";\n import { Tabs, TabPane } from \"@douyinfe/semi-ui\";\n+import { ChakraProvider } from \"@chakra-ui/react\";\n \n enum TabKey {\n     RxJsDemo = \"RxJsDemo\",\n }\n"
+                }
+            ],
+            "date": 1646141498611,
+            "name": "Commit-0",
+            "content": "import { useState } from \"react\";\nimport { BrowserRouter, Routes, Route } from \"react-router-dom\";\nimport RxJsDemoComponent from \"./components/rxjs/RxJsDemo.component\";\n\nenum RoutePath {\n    RxJs = \"rsjs\",\n}\n\nfunction App() {\n    const [count, setCount] = useState(0);\n\n    return (\n        <BrowserRouter>\n            <Routes>\n                <Route path={RoutePath.RxJs} element={<RxJsDemoComponent />} />'\n            </Routes>\n        </BrowserRouter>\n    );\n}\n\nexport default App;\n"
+        }
+    ]
+}
